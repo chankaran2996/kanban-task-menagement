@@ -63,6 +63,134 @@
                     "task":[]
                 }
             ]
+        },
+        {
+            "name":"Markting plan",
+            "isActive": false,
+            "colums":[
+                {
+                    "name":"Todo",
+                    "task":[
+                        {
+                            "title": "Build UI for onboarding flow",
+                            "description":"",
+                            "stauts":"Todo",
+                            "subtasks":[
+                                {
+                                    "title":"Sign up page",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "title":"Sign in page",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "title":"Welcome page",
+                                    "isCompleted":false
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Build UI for search",
+                            "description":"",
+                            "stauts":"Todo",
+                            "subtasks":[
+                                {
+                                    "title":"search page",
+                                    "isCompleted":false
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Build settings UI",
+                            "description":"",
+                            "stauts":"Todo",
+                            "subtasks":[
+                                {
+                                    "title":"Account page",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "title":"Billing page",
+                                    "isCompleted":false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name":"Doing",
+                    "task":[]
+                },
+                {
+                    "name":"complected",
+                    "task":[]
+                }
+            ]
+        },
+        {
+            "name":"Roadmap",
+            "isActive": false,
+            "colums":[
+                {
+                    "name":"Todo",
+                    "task":[
+                        {
+                            "title": "Build UI for onboarding flow",
+                            "description":"",
+                            "stauts":"Todo",
+                            "subtasks":[
+                                {
+                                    "title":"Sign up page",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "title":"Sign in page",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "title":"Welcome page",
+                                    "isCompleted":false
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Build UI for search",
+                            "description":"",
+                            "stauts":"Todo",
+                            "subtasks":[
+                                {
+                                    "title":"search page",
+                                    "isCompleted":false
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Build settings UI",
+                            "description":"",
+                            "stauts":"Todo",
+                            "subtasks":[
+                                {
+                                    "title":"Account page",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "title":"Billing page",
+                                    "isCompleted":false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name":"Doing",
+                    "task":[]
+                },
+                {
+                    "name":"complected",
+                    "task":[]
+                }
+            ]
         }
     ]
 }
