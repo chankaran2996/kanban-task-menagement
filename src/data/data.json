@@ -2,7 +2,7 @@
     "boards":[
         {
             "name":"platfrom Lanuch",
-            "isActive": false,
+            "isActive": true,
             "colums":[
                 {
                     "name":"Todo",
