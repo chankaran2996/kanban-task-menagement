@@ -124,6 +124,7 @@ const AddEditBoardModel = ({setBoardModelOpen, type }) => {
                 // console.log('checkclallled',isValid)
                 if(isValid===true){
                   onSubmit(type)
+                  setBoardModelOpen(false)
                 }
               }
             } 

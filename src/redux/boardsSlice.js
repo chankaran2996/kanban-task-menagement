@@ -6,15 +6,17 @@ const boardsSlice = createSlice({
     initialState: data.boards,
     reducers : {
         addBoard: (state, action) => {
+          // console.log(state)
           const isActive = state.length > 0 ? false : true;
           const payload = action.payload;
-          // console.log(payload)
+          console.log(payload)
           const board = {
             name: payload.name,
             isActive,
             columns: [],
           };
           board.columns = payload.boardColumn;
+          console.log(board)
           state.push(board);
         },
         editBoard: (state, action) => {
@@ -40,8 +42,8 @@ const boardsSlice = createSlice({
             action.payload;
           const task = { title, description, subtasks, status,AssingTo, dudeDate, priority };
           const board = state.find((board) => board.isActive);
-          const column = board.columns.find((col, index) => index === newColIndex);
-          column.tasks.push(task);
+          const column = board.colums.find((col, index) => index === newColIndex);
+          column.task.push(task);
         },
         editTask: (state, action) => {
           const {
@@ -57,19 +59,19 @@ const boardsSlice = createSlice({
             priority
           } = action.payload;
           const board = state.find((board) => board.isActive);
-          const column = board.columns.find((col, index) => index === prevColIndex);
-          const task = column.tasks.find((task, index) => index === taskIndex);
+          const column = board.colums.find((col, index) => index === prevColIndex);
+          const task = column.task.find((task, index) => index === taskIndex);
           task.title = title;
           task.status = status;
           task.AssingTo = AssingTo;
           task.dudeDate = dudeDate;
           task.description = description;
           task.subtasks = subtasks;
-          task.priority
+          task.priority = priority;
           if (prevColIndex === newColIndex) return;
-          column.tasks = column.tasks.filter((task, index) => index !== taskIndex);
-          const newCol = board.columns.find((col, index) => index === newColIndex);
-          newCol.tasks.push(task);
+          column.task = column.task.filter((task, index) => index !== taskIndex);
+          const newCol = board.colums.find((col, index) => index === newColIndex);
+          newCol.task.push(task);
         },
         dragTask: (state, action) => {
           const { colIndex, prevColIndex, taskIndex } = action.payload;

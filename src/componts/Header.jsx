@@ -57,7 +57,7 @@ const Header = ({boardModelOpen, setBoardModelOpen}) => {
 
         {boardModelOpen && <AddEditBoardModel type={boardType} setBoardModelOpen={setBoardModelOpen}/>}
 
-        {openAddEditTask && <AddEditTaskModal/>}
+        {openAddEditTask && <AddEditTaskModal device='mobile' type='add' setOpenAddEditTask={setOpenAddEditTask} />}
     </div>
   )
 }
