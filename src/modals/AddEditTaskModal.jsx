@@ -6,6 +6,7 @@ import boardsSlice from '../redux/boardsSlice'
 
 const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, pervColIndex = 0}) => {
     const dispatch = useDispatch()
+
     const [title, setTitle] = useState('')
 
     const [isValid , setIsValid] = useState(true)
@@ -38,29 +39,29 @@ const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, pervCol
       const board = useSelector((state) => state.boards).find((board) => board.isActive)
 
     //   console.log(board.colums)
-      const columns = board.colums
+      const columns = board.colums;
 
-      const col = columns.find((col , i) => i=== pervColIndex)
+    //   const col = columns.find((col , i) => i=== pervColIndex)
       
       const [status, setStatus] = useState(columns[pervColIndex].name)
       
       const validate = () => {
-        console.log('v1clallled')
+        // console.log('v1clallled')
         setIsValid(false)
-        console.log('v2clallled')
+        // console.log('v2clallled')
         if(!title.trim()){
           return false
         }
         if(!AssingTo.trim()){
             return false
         }
-        console.log(subTasks)
+        // console.log(subTasks)
         for(let i=0;i<subTasks.length;i++){
           if(!subTasks[i].title.trim()){
             return false
           }
         }
-        console.log('v3clallled')
+        // console.log('v3clallled')
         setIsValid(true)
         return true
       }

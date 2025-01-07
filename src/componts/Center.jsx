@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Center = () => {
+const Center = ({boardModelOpen, setBoardModelOpen }) => {
+  const [windowSize, setWindowSize] = useState()
   return (
     <div>
       Center

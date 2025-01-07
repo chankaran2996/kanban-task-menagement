@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 import { v4, validate } from 'uuid'
 import crossIcon from '../assets/icon-cross.svg'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import boardsSlice from '../redux/boardsSlice'
  
 
 const AddEditBoardModel = ({setBoardModelOpen, type }) => {
   const dispatch = useDispatch()
+
   const [name, setName] = useState('')
+
   const [isValid , setIsValid] = useState(false)
+
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   const [boardColumn,setBoardColumn] = useState(
     [
@@ -24,6 +28,28 @@ const AddEditBoardModel = ({setBoardModelOpen, type }) => {
       }
     ]
   )
+
+  const board = useSelector(state => state.boards).find(
+    (board) => board.isActive
+  )
+
+  if(type === 'edit' && isFirstLoad){
+        if(board.colums){
+          setBoardColumn(
+          board.colums.map((col) => {
+            return {...col , id:v4()}
+          })
+        )
+      }else{
+        setBoardColumn(
+          board.columns.map((col) => {
+            return {...col , id:v4()}
+          })
+        )
+      }
+        setName(board.name)
+        setIsFirstLoad(false)
+  }
 
     const close = (e) => {
         if(e.target !== e.currentTarget){
