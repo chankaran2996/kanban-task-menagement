@@ -108,7 +108,7 @@ const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, setIsTa
     }
 
     const onSubmit = (type) => {
-        console.log('clallled',subTasks)
+        console.log('clallled-data',subTasks)
 
         if(type==='add'){
             console.log(title,
@@ -235,7 +235,7 @@ const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, setIsTa
             onClick={
               () => { 
                 const isValid = validate()
-                console.log('checkclallled',isValid)
+                // console.log('checkclallled',isValid)
                 if(isValid===true){
                   onSubmit(type)
                   setOpenAddEditTask(false)

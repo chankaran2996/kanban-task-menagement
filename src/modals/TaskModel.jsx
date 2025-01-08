@@ -16,9 +16,9 @@ const TaskModel = ({colIndex, taskIndex, setIsTaskodelOpen}) => {
   const columns = board.colums
   const col = columns.find((column, i) => colIndex === i )
   const task = col.task.find((col,i) => taskIndex ===i)
-  const subtasks = task.subtasks
+  const subTasks = task.subTasks
   let compected = 0;
-    subtasks.forEach((subtask) =>{
+    subTasks.forEach((subtask) =>{
         if(subtask.isComplected){
             compected++;
         }
@@ -90,12 +90,12 @@ const TaskModel = ({colIndex, taskIndex, setIsTaskodelOpen}) => {
         </p>
 
         <p className='pt-6 text-gray-500 tracking-widest text-sm '>
-          Subtasks ({compected} of {subtasks.length})
+          Subtasks ({compected} of {subTasks.length})
         </p>
 
         <div className='mt-3 space-y-2'>
           {
-            subtasks.map((subtask , i) => {
+            subTasks.map((subtask , i) => {
               return(
                 <Subtask index={i} taskIndex={taskIndex} colIndex={colIndex} key={i} />
               )

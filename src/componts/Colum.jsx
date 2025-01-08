@@ -26,7 +26,7 @@ const Colum = ({colIndex}) => {
     // console.log(board , colIndex)
     // if(board.colum){
         const col = board.colums.find((col, i) => i=== colIndex)
-        console.log(col)
+        // console.log(col)
     // }else{
         // const col = board.Columns.find((col, i) => i=== colIndex)
     // }

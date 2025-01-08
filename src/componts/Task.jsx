@@ -13,8 +13,8 @@ const Task = ({key, taskIndex, colIndex}) => {
     const [isTaskModelOpen, setIsTaskodelOpen] = useState(false)
     // console.log("called")
     let compected = 0;
-    let subtasks = task.subtasks
-    subtasks.forEach((subtask) =>{
+    let subTasks = task.subTasks
+    subTasks.forEach((subtask) =>{
         if(subtask.isComplected){
             compected++;
         }
@@ -34,7 +34,7 @@ const Task = ({key, taskIndex, colIndex}) => {
             </p>
 
             <p className='font-bold text-xs tracking-tighter mt-2 text-gray-500'>
-                {compected } 0f {subtasks.length} complected tasks
+                {compected } 0f {subTasks.length} complected tasks
             </p>
         </div>  
 
