@@ -4,7 +4,7 @@ import crossIcon from '../assets/icon-cross.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import boardsSlice from '../redux/boardsSlice'
 
-const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, pervColIndex = 0}) => {
+const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, setIsTaskodelOpen, pervColIndex = 0}) => {
     const dispatch = useDispatch()
 
     const [title, setTitle] = useState('')
@@ -56,7 +56,9 @@ const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, pervCol
             return false
         }
         // console.log(subTasks)
+        console.log(subTasks)
         for(let i=0;i<subTasks.length;i++){
+          console.log(subTasks[i].title==false)
           if(!subTasks[i].title.trim()){
             return false
           }
@@ -67,6 +69,7 @@ const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, pervCol
       }
 
       const  subValue = (id, newValue) => {
+        // console.log(subTasks)
         setSubTasks(
           (changing) => {
             const newState = [...changing]
@@ -105,7 +108,8 @@ const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, pervCol
     }
 
     const onSubmit = (type) => {
-        // console.log('clallled')
+        console.log('clallled',subTasks)
+
         if(type==='add'){
             console.log(title,
                 description,
