@@ -17,6 +17,8 @@ const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, setIsTa
 
     const [AssingTo, setAssingTo] = useState('')
 
+    const [isFirstload, setIsFirstLoad] = useState(true);
+
     const [priority, setPriority] = useState('')
 
     const [newColIndex, setNewColIndex] = useState(pervColIndex)
@@ -40,11 +42,27 @@ const AddEditTaskModal = ({type , taskIndex, device, setOpenAddEditTask, setIsTa
 
     //   console.log(board.colums)
       const columns = board.colums;
+      const col = columns.find((col , i) => i=== pervColIndex)
 
-    //   const col = columns.find((col , i) => i=== pervColIndex)
+      const task = col ? col.task.find((task, i) => i === taskIndex) :[]
       
       const [status, setStatus] = useState(columns[pervColIndex].name)
       
+      if(type === 'edit' && isFirstload){
+        setSubTasks(
+          task.subTasks.map((subTask) => {
+            return {...subTask, id:v4()}
+          })
+        )
+
+        setTitle(task.title)
+        setDescription(task.description)
+        setDudeDate(task.dudeDate)
+        setAssingTo(task.AssingTo)
+        setPriority(task.priority)
+        setIsFirstLoad(false)
+      }
+
       const validate = () => {
         // console.log('v1clallled')
         setIsValid(false)
